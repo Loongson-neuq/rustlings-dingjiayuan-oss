@@ -21,7 +21,7 @@ struct State {
     color: (u8, u8, u8),
     position: Point,
     quit: bool,
-    message: String
+    message: String,
 }
 
 impl State {
