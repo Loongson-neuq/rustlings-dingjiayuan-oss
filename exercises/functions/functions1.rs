@@ -6,6 +6,7 @@
 fn main() {
     call_me(String::from("a"));
 }
+
 fn call_me(s:String) {
     println!("{}",s);
 }
