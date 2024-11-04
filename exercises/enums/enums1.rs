@@ -2,16 +2,22 @@
 //
 // No hints this time! ;)
 
-// I AM NOT DONE
-
 #[derive(Debug)]
 enum Message {
-    // TODO: define a few types of messages as used below
+    Quit,
+    Echo(String),
+    Move(i32, i32),
+    ChangeColor(u8, u8, u8),
 }
 
 fn main() {
-    println!("{:?}", Message::Quit);
-    println!("{:?}", Message::Echo);
-    println!("{:?}", Message::Move);
-    println!("{:?}", Message::ChangeColor);
+    let messages = [
+        Message::Quit,
+        Message::Echo("Hello".to_string()),
+        Message::Move(3, 4),
+        Message::ChangeColor(255, 0, 0),
+    ];
+    for message in messages.iter() {
+        println!("{:?}", message);
+    }
 }
