@@ -14,11 +14,13 @@ fn main() {
     let pretend_user_input = "8";
 
     match total_cost(&pretend_user_input) {
-        Ok(cost) => if cost > tokens {
-            println!("You can't afford that many!");
-        } else {
-            tokens -= cost;
-            println!("You now have {} tokens.", tokens);
+        Ok(cost) => {
+            if cost > tokens {
+                println!("You can't afford that many!");
+            } else {
+                tokens -= cost;
+                println!("You now have {} tokens.", tokens);
+            }
         }
         Err(e) => {
             println!("Failed to process your order: {}", e);

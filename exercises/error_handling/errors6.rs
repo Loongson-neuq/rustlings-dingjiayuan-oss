@@ -23,7 +23,7 @@ impl ParsePosNonzeroError {
         ParsePosNonzeroError::Creation(err)
     }
     // TODO: add another error conversion function here.
-    fn from_parseint(err:ParseIntError) -> ParsePosNonzeroError {
+    fn from_parseint(err: ParseIntError) -> ParsePosNonzeroError {
         ParsePosNonzeroError::ParseInt(err)
     }
 }
