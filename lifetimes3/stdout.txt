@@ -1,0 +1,56 @@
+Checking test execution result...
+[!] Test execution result: FAILED
+Checking source code format...
+  Preparing source code for format check...
+  Running format check...
+// =====================================================
+//  Running cargo fmt...
+// =====================================================
+Diff in /home/runner/work/rustlings-dingjiayuan-oss/rustlings-dingjiayuan-oss/format_check/src/lib.rs:15:
+ fn main() {
+     let name = String::from("Jill Smith");
+     let title = String::from("Fish Flying");
+-    let book = Book { author: &name, title: &title };
++    let book = Book {
++        author: &name,
++        title: &title,
++    };
+ 
+     println!("{} by {}", book.title, book.author);
+ }
+
+
+// =====================================================
+//    Running cargo clippy...
+// =====================================================
+
+    Checking format_check v0.1.0 (/home/runner/work/rustlings-dingjiayuan-oss/rustlings-dingjiayuan-oss/format_check)
+error[E0106]: missing lifetime specifier
+  --> src/lib.rs:11:13
+   |
+11 |     author: &str,
+   |             ^ expected named lifetime parameter
+   |
+help: consider introducing a named lifetime parameter
+   |
+10 ~ struct Book<'a> {
+11 ~     author: &'a str,
+   |
+
+error[E0106]: missing lifetime specifier
+  --> src/lib.rs:12:12
+   |
+12 |     title: &str,
+   |            ^ expected named lifetime parameter
+   |
+help: consider introducing a named lifetime parameter
+   |
+10 ~ struct Book<'a> {
+11 |     author: &str,
+12 ~     title: &'a str,
+   |
+
+For more information about this error, try `rustc --explain E0106`.
+error: could not compile `format_check` (lib) due to 2 previous errors
+
+[!] Source code format check: FAILED

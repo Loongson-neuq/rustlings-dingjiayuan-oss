@@ -1,0 +1,52 @@
+Checking test execution result...
+[!] Test execution result: FAILED
+Checking source code format...
+  Preparing source code for format check...
+  Running format check...
+// =====================================================
+//  Running cargo fmt...
+// =====================================================
+
+// =====================================================
+//    Running cargo clippy...
+// =====================================================
+
+    Checking format_check v0.1.0 (/home/runner/work/rustlings-dingjiayuan-oss/rustlings-dingjiayuan-oss/format_check)
+error[E0072]: recursive type `List` has infinite size
+  --> src/lib.rs:24:1
+   |
+24 | pub enum List {
+   | ^^^^^^^^^^^^^
+25 |     Cons(i32, List),
+   |               ---- recursive without indirection
+   |
+help: insert some indirection (e.g., a `Box`, `Rc`, or `&`) to break the cycle
+   |
+25 |     Cons(i32, Box<List>),
+   |               ++++    +
+
+error[E0391]: cycle detected when computing when `List` needs drop
+  --> src/lib.rs:24:1
+   |
+24 | pub enum List {
+   | ^^^^^^^^^^^^^
+   |
+   = note: ...which immediately requires computing when `List` needs drop again
+   = note: cycle used when computing whether `List` needs drop
+   = note: see https://rustc-dev-guide.rust-lang.org/overview.html#queries and https://rustc-dev-guide.rust-lang.org/query.html for more information
+
+error[E0391]: cycle detected when computing drop-check constraints for `List`
+  --> src/lib.rs:24:1
+   |
+24 | pub enum List {
+   | ^^^^^^^^^^^^^
+   |
+   = note: ...which immediately requires computing drop-check constraints for `List` again
+   = note: cycle used when computing dropck types for `List`
+   = note: see https://rustc-dev-guide.rust-lang.org/overview.html#queries and https://rustc-dev-guide.rust-lang.org/query.html for more information
+
+Some errors have detailed explanations: E0072, E0391.
+For more information about an error, try `rustc --explain E0072`.
+error: could not compile `format_check` (lib) due to 3 previous errors
+
+[!] Source code format check: FAILED

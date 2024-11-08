@@ -1,0 +1,33 @@
+Checking test execution result...
+[!] Test execution result: FAILED
+Checking source code format...
+  Preparing source code for format check...
+  Running format check...
+// =====================================================
+//  Running cargo fmt...
+// =====================================================
+Diff in /home/runner/work/rustlings-dingjiayuan-oss/rustlings-dingjiayuan-oss/format_check/src/lib.rs:9:
+ 
+ struct Rectangle {
+     width: i32,
+-    height: i32
++    height: i32,
+ }
+ 
+ impl Rectangle {
+Diff in /home/runner/work/rustlings-dingjiayuan-oss/rustlings-dingjiayuan-oss/format_check/src/lib.rs:18:
+         if width <= 0 || height <= 0 {
+             panic!("Rectangle width and height cannot be negative!")
+         }
+-        Rectangle {width, height}
++        Rectangle { width, height }
+     }
+ }
+ 
+
+
+// =====================================================
+//    Running cargo clippy...
+// =====================================================
+
+[!] Source code format check: FAILED

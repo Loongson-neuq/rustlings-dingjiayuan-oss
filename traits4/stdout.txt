@@ -1,0 +1,89 @@
+Checking test execution result...
+[!] Test execution result: FAILED
+Checking source code format...
+  Preparing source code for format check...
+  Running format check...
+// =====================================================
+//  Running cargo fmt...
+// =====================================================
+
+error: expected identifier, found `,`
+  --> /home/runner/work/rustlings-dingjiayuan-oss/rustlings-dingjiayuan-oss/format_check/src/lib.rs:26:38
+   |
+26 | fn compare_license_types(software: ??, software_two: ??) -> bool {
+   |                                      ^ expected identifier
+   |
+help: remove this comma
+   |
+26 - fn compare_license_types(software: ??, software_two: ??) -> bool {
+26 + fn compare_license_types(software: ?? software_two: ??) -> bool {
+   |
+
+error: expected a trait, found type
+  --> /home/runner/work/rustlings-dingjiayuan-oss/rustlings-dingjiayuan-oss/format_check/src/lib.rs:26:37
+   |
+26 | fn compare_license_types(software: ??, software_two: ??) -> bool {
+   |                                     ^^^^^^^^^^^^^^^
+
+error: expected identifier, found `)`
+  --> /home/runner/work/rustlings-dingjiayuan-oss/rustlings-dingjiayuan-oss/format_check/src/lib.rs:26:56
+   |
+26 | fn compare_license_types(software: ??, software_two: ??) -> bool {
+   |                                                        ^ expected identifier
+
+
+// =====================================================
+//    Running cargo clippy...
+// =====================================================
+
+    Checking format_check v0.1.0 (/home/runner/work/rustlings-dingjiayuan-oss/rustlings-dingjiayuan-oss/format_check)
+error: expected identifier, found `,`
+  --> src/lib.rs:26:38
+   |
+26 | fn compare_license_types(software: ??, software_two: ??) -> bool {
+   |                                      ^ expected identifier
+   |
+help: remove this comma
+   |
+26 - fn compare_license_types(software: ??, software_two: ??) -> bool {
+26 + fn compare_license_types(software: ?? software_two: ??) -> bool {
+   |
+
+error: expected a trait, found type
+  --> src/lib.rs:26:37
+   |
+26 | fn compare_license_types(software: ??, software_two: ??) -> bool {
+   |                                     ^^^^^^^^^^^^^^^
+
+error: expected identifier, found `)`
+  --> src/lib.rs:26:56
+   |
+26 | fn compare_license_types(software: ??, software_two: ??) -> bool {
+   |                                                        ^ expected identifier
+
+error[E0425]: cannot find value `software` in this scope
+  --> src/lib.rs:27:5
+   |
+27 |     software.licensing_info() == software_two.licensing_info()
+   |     ^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find value `software_two` in this scope
+  --> src/lib.rs:27:34
+   |
+27 |     software.licensing_info() == software_two.licensing_info()
+   |                                  ^^^^^^^^^^^^ not found in this scope
+
+warning: consider choosing a more descriptive name
+  --> src/lib.rs:26:37
+   |
+26 | fn compare_license_types(software: ??, software_two: ??) -> bool {
+   |                                     ^^^^^^^^^^^^^^^
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#just_underscores_and_digits
+   = note: `#[warn(clippy::just_underscores_and_digits)]` on by default
+
+For more information about this error, try `rustc --explain E0425`.
+warning: `format_check` (lib) generated 1 warning
+error: could not compile `format_check` (lib) due to 5 previous errors; 1 warning emitted
+
+[!] Source code format check: FAILED

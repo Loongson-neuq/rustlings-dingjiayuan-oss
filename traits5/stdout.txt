@@ -1,0 +1,53 @@
+Checking test execution result...
+[!] Test execution result: FAILED
+Checking source code format...
+  Preparing source code for format check...
+  Running format check...
+// =====================================================
+//  Running cargo fmt...
+// =====================================================
+
+error: expected identifier, found `)`
+  --> /home/runner/work/rustlings-dingjiayuan-oss/rustlings-dingjiayuan-oss/format_check/src/lib.rs:33:22
+   |
+33 | fn some_func(item: ??) -> bool {
+   |                      ^ expected identifier
+
+
+// =====================================================
+//    Running cargo clippy...
+// =====================================================
+
+    Checking format_check v0.1.0 (/home/runner/work/rustlings-dingjiayuan-oss/rustlings-dingjiayuan-oss/format_check)
+error: expected identifier, found `)`
+  --> src/lib.rs:33:22
+   |
+33 | fn some_func(item: ??) -> bool {
+   |                      ^ expected identifier
+
+error[E0425]: cannot find value `item` in this scope
+  --> src/lib.rs:34:5
+   |
+34 |     item.some_function() && item.other_function()
+   |     ^^^^ not found in this scope
+
+error[E0425]: cannot find value `item` in this scope
+  --> src/lib.rs:34:29
+   |
+34 |     item.some_function() && item.other_function()
+   |                             ^^^^ not found in this scope
+
+warning: consider choosing a more descriptive name
+  --> src/lib.rs:33:21
+   |
+33 | fn some_func(item: ??) -> bool {
+   |                     ^
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#just_underscores_and_digits
+   = note: `#[warn(clippy::just_underscores_and_digits)]` on by default
+
+For more information about this error, try `rustc --explain E0425`.
+warning: `format_check` (lib) generated 1 warning
+error: could not compile `format_check` (lib) due to 3 previous errors; 1 warning emitted
+
+[!] Source code format check: FAILED

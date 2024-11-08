@@ -1,0 +1,49 @@
+Checking test execution result...
+[!] Test execution result: FAILED
+Checking source code format...
+  Preparing source code for format check...
+  Running format check...
+// =====================================================
+//  Running cargo fmt...
+// =====================================================
+
+error: expected expression, found `?`
+  --> /home/runner/work/rustlings-dingjiayuan-oss/rustlings-dingjiayuan-oss/format_check/src/lib.rs:18:24
+   |
+18 |         Some(first) => ???,
+   |                     -- ^ expected expression
+   |                     |
+   |                     while parsing the `match` arm starting here
+
+
+// =====================================================
+//    Running cargo clippy...
+// =====================================================
+
+    Checking format_check v0.1.0 (/home/runner/work/rustlings-dingjiayuan-oss/rustlings-dingjiayuan-oss/format_check)
+error: expected expression, found `?`
+  --> src/lib.rs:18:24
+   |
+18 |         Some(first) => ???,
+   |                     -- ^ expected expression
+   |                     |
+   |                     while parsing the `match` arm starting here
+
+warning: unused variable: `words`
+  --> src/lib.rs:26:32
+   |
+26 | pub fn capitalize_words_vector(words: &[&str]) -> Vec<String> {
+   |                                ^^^^^ help: if this is intentional, prefix it with an underscore: `_words`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `words`
+  --> src/lib.rs:34:32
+   |
+34 | pub fn capitalize_words_string(words: &[&str]) -> String {
+   |                                ^^^^^ help: if this is intentional, prefix it with an underscore: `_words`
+
+warning: `format_check` (lib) generated 2 warnings
+error: could not compile `format_check` (lib) due to 1 previous error; 2 warnings emitted
+
+[!] Source code format check: FAILED

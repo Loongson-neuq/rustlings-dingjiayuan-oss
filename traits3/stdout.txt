@@ -1,0 +1,36 @@
+Checking test execution result...
+[!] Test execution result: FAILED
+Checking source code format...
+  Preparing source code for format check...
+  Running format check...
+// =====================================================
+//  Running cargo fmt...
+// =====================================================
+
+// =====================================================
+//    Running cargo clippy...
+// =====================================================
+
+    Checking format_check v0.1.0 (/home/runner/work/rustlings-dingjiayuan-oss/rustlings-dingjiayuan-oss/format_check)
+error[E0046]: not all trait items implemented, missing: `licensing_info`
+  --> src/lib.rs:25:1
+   |
+14 |     fn licensing_info(&self) -> String;
+   |     ----------------------------------- `licensing_info` from trait
+...
+25 | impl Licensed for SomeSoftware {} // Don't edit this line
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ missing `licensing_info` in implementation
+
+error[E0046]: not all trait items implemented, missing: `licensing_info`
+  --> src/lib.rs:26:1
+   |
+14 |     fn licensing_info(&self) -> String;
+   |     ----------------------------------- `licensing_info` from trait
+...
+26 | impl Licensed for OtherSoftware {} // Don't edit this line
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ missing `licensing_info` in implementation
+
+For more information about this error, try `rustc --explain E0046`.
+error: could not compile `format_check` (lib) due to 2 previous errors
+
+[!] Source code format check: FAILED
